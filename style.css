@@ -1,0 +1,42 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(58, 52, 52);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    font-size: 32px;
+    
+}
+
+#header, #footer{
+    height: 50px; /*Sets a static height property for the header and footer*/
+}
+
+#contentContainer {
+    align-items: center; /*Places the main features centrally on the webpage*/
+    justify-content: space-evenly; /*Spaces the two main features of the website*/
+    display: flex; 
+    flex: auto; /*Expands contentContainer to max height and width.*/
+    width: 100%;
+}
+
+#gridContainer{
+    height: 600px;
+    width: 600px;
+    display: inline-block;
+
+    
+    
+}
+
+.grid-item{
+    min-height: 12px;
+    min-width: 12px;
+}
