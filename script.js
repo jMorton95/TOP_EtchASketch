@@ -23,23 +23,29 @@ for (i = 0; i < clickedDiv.length;i++) {
 }
 
 
-
-
 function findClickedDiv() {
 
    console.log(clickedDiv);
 
 }
 
-window.addEventListener('click', function(e)  {
+addEventListener('click', function(e) {
+        if (e.className == 'grid-item'){  //FIX THIS TO MAKE IT ONLY TRIGGER IF THE DIV IS IN THE GRID.
+            console.log(e);
+
+        }
+    })
+
+    
+
+
 
     
    
     
 
-})
 
-findClickedDiv();
+//findClickedDiv();
 
 
 
