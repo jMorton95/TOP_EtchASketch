@@ -13,9 +13,34 @@ for (i = (gridSideSize ** 2); i > 0; i--){
 
 // MAKE FUNCTION THAT FINDS ID OF THE DIV CLICKED INSIDE THE GRID, AND SET ITS BACKGROUND COLOR TO BLACK.
 
-/*const gridClick = document.querySelectorAll('.grid-item');
-gridClick.foreach ((gridClick) => {
-    
+//Create a NodeList of all of the Grid Items inside of the container.
+const clickedDiv = document.querySelectorAll('.grid-item');
+
+//Assign an individual ID to each Grid Item for future referencing.
+for (i = 0; i < clickedDiv.length;i++) {
+
+    clickedDiv[i].setAttribute('id', i);
+}
+
+
+
+
+function findClickedDiv() {
+
+   console.log(clickedDiv);
 
 }
-*/
+
+window.addEventListener('click', function(e)  {
+
+    
+   
+    
+
+})
+
+findClickedDiv();
+
+
+
+
