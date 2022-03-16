@@ -4,6 +4,7 @@ html, body{
     margin: 0px;
     padding: 0px;
 }
+
 body{
     display: flex;
     align-items: center;
@@ -28,15 +29,20 @@ body{
 }
 
 #gridContainer{
+    /*Specify a static size for the interactable Etch-a-Sketch board*/
     height: 600px;
     width: 600px;
-    display: inline-block;
 
-    
-    
+    /*Display all children as a grid layout, separate into 1/16th size to establish the 16x16 grid*/
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+
+    border: 1px solid black;
 }
 
 .grid-item{
-    min-height: 12px;
-    min-width: 12px;
+    background-color: white;
+    /*color: black;*/
+    border: 1px solid black;
+ 
 }
