@@ -35,3 +35,13 @@ addEventListener('mouseover', e => {
     clickedDiv[e.target.id].classList.toggle('grid-item');
     }
 }) 
+
+
+/*
+TO DO LIST:
+
+ADD RESET BUTTON FUNCTIONALITY
+ADD COLOUR PICKER FUNCTIONALITY
+ADD A SELECTOR FOR THE SIZE OF THE GRID (WITHIN A REALISTIC MARGIN)
+
+*/

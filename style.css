@@ -17,7 +17,9 @@ body{
 }
 
 #header, #footer{
-    height: 50px; /*Sets a static height property for the header and footer*/
+    height: 10%; /*Sets a static height property for the header and footer*/
+    align-items: center;
+    padding: 5%;
 }
 
 #contentContainer{
@@ -26,20 +28,20 @@ body{
     display: flex; 
     flex: auto; /*Expands contentContainer to max height and width.*/
     width: 100%;
+    height: auto;
 }
 
 #settingsButtons{
     height: 600px;
     display: flex;
     flex-direction: column;
-    align-items: left;
     justify-content: space-evenly;
-    padding-right: 75px;
+    padding-right: 100px;
 }
 
 .btn {
     height: 60px;
-    width: 60px;
+    width: 120px;
 }
 
 #gridContainer{
