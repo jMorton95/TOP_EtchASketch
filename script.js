@@ -1,12 +1,14 @@
 const gridContainer = document.querySelector('#gridContainer');
 
-//let gridItem;
-let gridSideSize = 16;
+let gridSideSize = 64;
 
+//Adjust the layout and side of each grid item based on the grid size parameters.
+gridContainer.style.gridTemplateColumns = `repeat(${gridSideSize}, 1fr)`;
+
+//Loop to create and append grid item's, number of loops dependant on grid size selected.
 for (i = (gridSideSize ** 2); i > 0; i--){
     let gridItem = document.createElement('div');
     gridItem.classList.add('grid-item');
-    //gridItem.textContent = "I"
     gridContainer.appendChild(gridItem);
 
 }
@@ -25,32 +27,11 @@ for (i = 0; i < clickedDiv.length;i++) {
 
 
 //Toggles the CSS class of a grid item when hovered over.
-addEventListener('mouseover', (e) => {
+addEventListener('mouseover', e => {
 
-    //if ((addEventListener('mousedown') (e)) = true){
+    if (e.target.classList == ('grid-item')) {
 
     clickedDiv[e.target.id].classList.toggle('colouredItem');
     clickedDiv[e.target.id].classList.toggle('grid-item');
-
+    }
 }) 
-
-
-addEventListener('mousedown', (e) => {
-
-    console.log(e);
-})
-
-
-
-
-
-    
-   
-    
-
-
-//findClickedDiv();
-
-
-
-

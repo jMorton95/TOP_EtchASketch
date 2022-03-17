@@ -21,11 +21,25 @@ body{
 }
 
 #contentContainer{
-    align-items: center; /*Places the main features centrally on the webpage*/
-    justify-content: space-evenly; /*Spaces the two main features of the website*/
+    align-items: center;/*Places the main features centrally on the webpage*/
+    justify-content: center; /*Spaces the two main features of the website*/
     display: flex; 
     flex: auto; /*Expands contentContainer to max height and width.*/
     width: 100%;
+}
+
+#settingsButtons{
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-evenly;
+    padding-right: 75px;
+}
+
+.btn {
+    height: 60px;
+    width: 60px;
 }
 
 #gridContainer{
@@ -43,7 +57,7 @@ body{
 .grid-item{
     background-color: white;
     /*color: black;*/
-    border: 1px solid rgba(0, 0, 0, 0.212);
+   /* border: 1px solid rgba(0, 0, 0, 0.212);*/
  
 }
 
