@@ -20,7 +20,7 @@ body{
     height: 50px; /*Sets a static height property for the header and footer*/
 }
 
-#contentContainer {
+#contentContainer{
     align-items: center; /*Places the main features centrally on the webpage*/
     justify-content: space-evenly; /*Spaces the two main features of the website*/
     display: flex; 
@@ -43,6 +43,11 @@ body{
 .grid-item{
     background-color: white;
     /*color: black;*/
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.212);
  
+}
+
+.colouredItem {
+    background-color: black;
+    
 }

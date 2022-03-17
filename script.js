@@ -1,10 +1,10 @@
 const gridContainer = document.querySelector('#gridContainer');
 
-let gridItem;
+//let gridItem;
 let gridSideSize = 16;
 
 for (i = (gridSideSize ** 2); i > 0; i--){
-    gridItem = document.createElement('div');
+    let gridItem = document.createElement('div');
     gridItem.classList.add('grid-item');
     //gridItem.textContent = "I"
     gridContainer.appendChild(gridItem);
@@ -23,20 +23,24 @@ for (i = 0; i < clickedDiv.length;i++) {
 }
 
 
-function findClickedDiv() {
 
-   console.log(clickedDiv);
+//Toggles the CSS class of a grid item when hovered over.
+addEventListener('mouseover', (e) => {
 
-}
+    //if ((addEventListener('mousedown') (e)) = true){
 
-addEventListener('click', function(e) {
-        if (e.className == 'grid-item'){  //FIX THIS TO MAKE IT ONLY TRIGGER IF THE DIV IS IN THE GRID.
-            console.log(e);
+    clickedDiv[e.target.id].classList.toggle('colouredItem');
+    clickedDiv[e.target.id].classList.toggle('grid-item');
 
-        }
-    })
+}) 
 
-    
+
+addEventListener('mousedown', (e) => {
+
+    console.log(e);
+})
+
+
 
 
 
