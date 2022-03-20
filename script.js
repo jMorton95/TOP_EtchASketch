@@ -9,6 +9,7 @@ gridContainer.style.gridTemplateColumns = `repeat(${gridSideSize}, 1fr)`;
 for (i = (gridSideSize ** 2); i > 0; i--){
     let gridItem = document.createElement('div');
     gridItem.classList.add('grid-item');
+    gridItem.classList.add('defaultGridItem');
     gridContainer.appendChild(gridItem);
 
 }
@@ -25,16 +26,40 @@ for (i = 0; i < clickedDiv.length;i++) {
 }
 
 
-
 //Toggles the CSS class of a grid item when hovered over.
 addEventListener('mouseover', e => {
 
-    if (e.target.classList == ('grid-item')) {
+    
+    if (e.target.classList == "grid-item defaultGridItem"){
 
-    clickedDiv[e.target.id].classList.toggle('colouredItem');
-    clickedDiv[e.target.id].classList.toggle('grid-item');
-    }
+   
+    clickedDiv[e.target.id].classList.add('colouredItem');
+}
 }) 
+
+
+//Resets the grid back to default.
+function resetGrid() {
+
+
+    for (i = 0; i < gridSideSize ** 2; i++){
+
+
+        clickedDiv[i].classList.remove('colouredItem');
+
+    }
+    
+}
+
+
+//Selects the reset button for applying an event handler with the Reset function.
+const resetButton = document.querySelector('#reset');
+resetButton.addEventListener('click', e => {
+        
+    resetGrid()
+})
+
+
 
 
 /*
