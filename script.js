@@ -1,6 +1,19 @@
 const gridContainer = document.querySelector('#gridContainer');
 
-let gridSideSize = 64;
+//Prompts the user to set the Grid Size upon page load.
+let gridSideSize = prompt("Enter A Size Between 1 and 100", 32);
+
+//Checks if the grid size it too small, large, or not entered and sets it to an appropriate size.
+if (gridSideSize < 1){
+    gridSideSize = 32;
+    alert("ERROR, Size entered too small. Grid Size set to 32.");
+} else if (gridSideSize > 100){
+    gridSideSize = 100;
+    alert("ERROR, Size entered too large. Grid set to max size of 100.");
+} else {
+    gridSideSize = 32;
+    alert("ERROR, No size entered. Grid Size set to 32.");
+}
 
 //Adjust the layout and side of each grid item based on the grid size parameters.
 gridContainer.style.gridTemplateColumns = `repeat(${gridSideSize}, 1fr)`;
@@ -9,12 +22,10 @@ gridContainer.style.gridTemplateColumns = `repeat(${gridSideSize}, 1fr)`;
 for (i = (gridSideSize ** 2); i > 0; i--){
     let gridItem = document.createElement('div');
     gridItem.classList.add('grid-item');
-    gridItem.classList.add('defaultGridItem');
     gridContainer.appendChild(gridItem);
 
 }
 
-// MAKE FUNCTION THAT FINDS ID OF THE DIV CLICKED INSIDE THE GRID, AND SET ITS BACKGROUND COLOR TO BLACK.
 
 //Create a NodeList of all of the Grid Items inside of the container.
 const clickedDiv = document.querySelectorAll('.grid-item');
@@ -30,7 +41,7 @@ for (i = 0; i < clickedDiv.length;i++) {
 addEventListener('mouseover', e => {
 
     
-    if (e.target.classList == "grid-item defaultGridItem"){
+    if (e.target.classList == "grid-item"){
 
    
     clickedDiv[e.target.id].classList.add('colouredItem');
