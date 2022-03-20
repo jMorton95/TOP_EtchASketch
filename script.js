@@ -10,9 +10,9 @@ if (gridSideSize < 1){
 } else if (gridSideSize > 100){
     gridSideSize = 100;
     alert("ERROR, Size entered too large. Grid set to max size of 100.");
-} else {
+} else if (isNaN(gridSideSize)){
     gridSideSize = 32;
-    alert("ERROR, No size entered. Grid Size set to 32.");
+    alert("ERROR, No size selected. Grid Size set to 32.");
 }
 
 //Adjust the layout and side of each grid item based on the grid size parameters.
@@ -71,12 +71,19 @@ resetButton.addEventListener('click', e => {
 })
 
 
+//Selects the size selector button, and refreshes the page to allow the size to be changed.
+const sizeSelectorButton = document.querySelector('#adjustSize');
+sizeSelectorButton.addEventListener('click', e => {
+
+    location.reload();
+})
+
+
 
 
 /*
 TO DO LIST:
 
-ADD RESET BUTTON FUNCTIONALITY
 ADD COLOUR PICKER FUNCTIONALITY
 ADD A SELECTOR FOR THE SIZE OF THE GRID (WITHIN A REALISTIC MARGIN)
 
