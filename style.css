@@ -10,7 +10,7 @@ body{
     align-items: center;
     flex-direction: column;
     background-color: rgb(58, 52, 52);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: sans-serif;
     color: white;
     font-size: 32px;
     
@@ -42,16 +42,19 @@ body{
 .btn {
     height: 60px;
     width: 120px;
+    border-radius: 50%;
+    font-weight: bold;
+    
 }
 
 #gridContainer{
     /*Specify a static size for the interactable Etch-a-Sketch board*/
     height: 600px;
     width: 600px;
+    margin-right: 10%;
 
-    /*Display all children as a grid layout, separate into 1/16th size to establish the 16x16 grid*/
+    /*Display all children as a grid layout*/
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
 
     border: 1px solid black;
     background-color: white;

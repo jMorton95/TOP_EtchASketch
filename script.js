@@ -37,16 +37,33 @@ for (i = 0; i < clickedDiv.length;i++) {
 }
 
 
+let toggleRainBowMode = 0;
+
 //Toggles the CSS class of a grid item when hovered over.
-addEventListener('mouseover', e => {
-
+gridContainer.addEventListener('mouseover', e => {
     
-    if (e.target.classList == "grid-item"){
+if (e.target.classList == "grid-item" || e.target.classList == "grid-item colouredItem" ){
 
-   
-    clickedDiv[e.target.id].classList.add('colouredItem');
-}
-}) 
+    if (toggleRainBowMode === 0){
+
+        clickedDiv[e.target.id].classList.add('colouredItem');
+        
+    } else if (toggleRainBowMode === 1){
+
+        /*If Rainbow Mode is toggled on, create a random colour reference and apply it to the 
+        ID of the element that triggered the event.*/
+
+        let randomColor = Math.floor(Math.random()*16777215).toString(16);
+        let itemElement = document.getElementById(e.target.id);
+        itemElement.style.backgroundColor = "#" + randomColor;
+        clickedDiv[e.target.id].classList.remove('colouredItem');
+        }
+    }
+    console.log(e);
+})  
+
+
+
 
 
 //Resets the grid back to default.
@@ -57,6 +74,9 @@ function resetGrid() {
 
 
         clickedDiv[i].classList.remove('colouredItem');
+        let itemElement = document.getElementById(i);
+        itemElement.style.backgroundColor = "";
+
 
     }
     
@@ -78,13 +98,22 @@ sizeSelectorButton.addEventListener('click', e => {
     location.reload();
 })
 
+const rainbowMode = document.querySelector('#rainbowMode');
+rainbowMode.addEventListener('click', e => {
 
+    if (toggleRainBowMode === 0){
+        toggleRainBowMode = 1;
+    } else if (toggleRainBowMode === 1){
+        toggleRainBowMode = 0;
+    }
+
+    console.log(toggleRainBowMode);
+})
 
 
 /*
 TO DO LIST:
 
 ADD COLOUR PICKER FUNCTIONALITY
-ADD A SELECTOR FOR THE SIZE OF THE GRID (WITHIN A REALISTIC MARGIN)
 
 */
